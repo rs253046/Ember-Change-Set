@@ -1,5 +1,11 @@
 export default function() {
-
+  let rentals = {
+      type: 'tests',
+      id: 1,
+      attributes: {
+        test: 'Grand Old Mansion',
+      }
+    };
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
@@ -24,7 +30,15 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
   */
   this.post('/tests');
-  this.get('/tests');
-   this.put('/tests/:id');
-   this.patch('/tests/:id');
+  this.get('/tests/:id', function(db, request) {
+    return {data:rentals};
+  });
+   this.put('/tests/:id',function(db, request) {
+    console.info('requestrequest', request)
+    return request.requestBody;
+  });
+   this.patch('/tests/:id',function(db, request) {
+    console.info('reqequest', request)
+    return request.requestBody;
+  });
 }

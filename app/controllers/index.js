@@ -6,8 +6,9 @@ export default Ember.Controller.extend({
 			model.save();
 		},
 		rollback(model) {
-
+         
 			model.rollback();
+			
 		}
 	}
 });
