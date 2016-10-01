@@ -1,3 +1,10 @@
 {{input value=model.test}}
 <div {{action 'save'}}>submit</div>
 <div {{action 'rollback'}}>cancel</div>
+<ul>
+  {{#each model.changes as |change|}}
+    <li>{{change.key}}: {{get model._content change.key}}-->{{change.value}}</li>
+    <div {{action 'restore' change.key}}>Restore</div>
+  {{/each}}
+</ul>
+{{#link-to 'about'}}about{{/link-to}}

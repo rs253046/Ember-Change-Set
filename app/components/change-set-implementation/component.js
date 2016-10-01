@@ -8,6 +8,9 @@ export default Ember.Component.extend({
     	},
     	 rollback(){
       this.attrs.rollback(this.get('model'));
+    },
+    restore(key) {
+    	this.set(`model.${key}`, this.get(`model._content.${key}`));
     }
     	
     }
