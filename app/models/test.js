@@ -1,5 +1,5 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  test: DS.attr('string')
+  test: DS.attr('string', {defaultValue: 'asd'})
 });

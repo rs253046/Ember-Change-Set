@@ -1,1 +1,6 @@
-{{change-set-implementation model=model}}
+{{change-set-implementation model=(changeset model) save=(action "onSave") rollback=(action "rollback")}}
+
+
+
+<br>
+Updated value ({{model.test}})
